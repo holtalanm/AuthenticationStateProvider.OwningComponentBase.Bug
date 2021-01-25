@@ -1,0 +1,10 @@
+﻿@page "/show-user"
+
+<AuthorizeView>
+    <Authorized>
+        <UserShowComponent></UserShowComponent>
+    </Authorized>
+    <NotAuthorized>
+        <div>Not Authenticated.</div>
+    </NotAuthorized>
+</AuthorizeView>

@@ -1,0 +1,19 @@
+﻿@using Microsoft.Extensions.DependencyInjection
+
+@inherits OwningComponentBase
+
+<div>
+    @_Result
+</div>
+
+@code {
+    private IUserService _UserService;
+    private string _Result;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _UserService = ScopedServices.GetService<IUserService>();
+
+        _Result = await _UserService.GetUserNameAsync();
+    }
+}
